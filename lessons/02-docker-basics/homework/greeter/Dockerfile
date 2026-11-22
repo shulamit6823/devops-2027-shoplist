@@ -5,7 +5,7 @@ WORKDIR /app
 # מעתיק את קובץ התלויות לתיקיית העבודה
 COPY requirements.txt .
 # מתקין את ספריות ה-Python שהשירות צריך
-RUN pip install -r requirements.txt
+RUN pip install --trusted-host pypi.org --trusted-host files.pythonhosted.org -r requirements.txt
 # מעתיק את כל קבצי השירות לתיקיית העבודה
 COPY . .
 # מציין שהשירות משתמש בפורט 8000 בתוך ה-Container
